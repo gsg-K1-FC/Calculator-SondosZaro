@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    width: 322px;
+    text-align: center;
+    color: white;
+}
+
+.container {
+    margin-top: 150px;
+    margin-left: 600px;
+    background-color: #C4C4C4;
+    width: 338px;
+    height: 330px;
+    border-radius: 25px;
+}
+
+.sections {
+    margin-left: 5px;
+    margin-top: 20px;
+}
+
+#input-p {
+    color: white;
+    border-radius: 25px;
+    background-color: #ED2792;
+    outline: none;
+    width: 322px;
+    height: 35px;
+}
+
+.second-section {
+    margin-top: 10px;
+}
+
+.btn {
+    color: white;
+    border-radius: 25px;
+    background-color: #ED2792;
+    width: 75px;
+    height: 35px;
+    margin-left: 2.5px;
+}
+
+.rows {
+    margin-top: 10px;
+}
