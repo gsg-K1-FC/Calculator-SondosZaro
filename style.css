@@ -44,14 +44,15 @@
     margin-top: 5%;
 }
 
-.btn {
+.btn,
+.btnC {
     color: #FBFF52;
     background-color: #85004D;
     width: 21%;
     border-radius: 25px;
     height: 35px;
     margin-left: 1%;
-    outline:none;
+    outline: none;
 }
 
 .rows {

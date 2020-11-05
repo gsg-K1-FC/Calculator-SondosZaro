@@ -19,22 +19,23 @@ clear.addEventListener("click", function() {
 
 SToD.addEventListener("click", function() {
     let currency = inputScreen.innerText;
-    currency = currency / 3.37703;
+    currency = (currency / 3.37703).toFixed(4);
     inputScreen.innerText = currency;
+
 })
 DToS.addEventListener("click", function() {
     let currency = inputScreen.innerText;
-    currency = currency * 3.37703;
+    currency = (currency * 3.37703).toFixed(4);
     inputScreen.innerText = currency;
 })
 EToS.addEventListener("click", function() {
     let currency = inputScreen.innerText;
-    currency = currency * 3.99212;
+    currency = (currency * 3.99212).toFixed(4);
     inputScreen.innerText = currency;
 })
 SToE.addEventListener("click", function() {
     let currency = inputScreen.innerText;
-    currency = currency / 3.99212;
+    currency = (currency / 3.99212).toFixed(4);
     inputScreen.innerText = currency;
 })
 
