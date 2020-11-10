@@ -33,8 +33,9 @@ numberButtons.addEventListener('click', (event) => {
 
 function forSecondNumber(operatorDigit) {
 
-    console.log(displayCalculator.firstNumber)
-    if (!displayCalculator.firstNumber || !displayCalculator.secondNumber && displayCalculator.operator) {
+
+    if (!displayCalculator.firstNumber || !displayCalculator.secondNumber &&
+        displayCalculator.operator && displayCalculator.operator !== "=") {
         alert("you should enter operation and two numbers")
         return
     }
@@ -47,6 +48,7 @@ function forSecondNumber(operatorDigit) {
         displayCalculator.firstNumber = result;
         displayCalculator.secondNumber = null;
 
+
         updateScreen();
 
     }
@@ -54,9 +56,9 @@ function forSecondNumber(operatorDigit) {
     displayCalculator.operator = operatorDigit;
 }
 
-function basicOperator(number, value, operator) {
-    let firstnumber = parseInt(number);
-    let secondnumber = parseInt(value);
+function basicOperator(numberOne, numberTwo, operator) {
+    let firstnumber = parseInt(numberOne);
+    let secondnumber = parseInt(numberTwo);
 
 
     if (operator === '-') {
@@ -88,23 +90,23 @@ function inputDigit(number) {
             if (!displayCalculator.secondNumber) {
                 displayCalculator.displayValue = number;
                 displayCalculator.secondNumber = displayCalculator.displayValue;
-                console.log(displayCalculator)
+
 
 
             } else {
                 displayCalculator.displayValue = displayCalculator.displayValue + number;
                 displayCalculator.secondNumber = displayCalculator.displayValue;
-                console.log(displayCalculator)
+
             }
         } else {
             if (displayCalculator.displayValue === '0') {
                 displayCalculator.displayValue = number;
                 displayCalculator.firstNumber = displayCalculator.displayValue;
-                console.log(displayCalculator)
+
             } else {
                 displayCalculator.displayValue = displayCalculator.displayValue + number;
                 displayCalculator.firstNumber = displayCalculator.displayValue;
-                console.log(displayCalculator)
+
             }
         }
     }
