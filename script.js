@@ -3,7 +3,7 @@ const displayCalculator = {
     displayValue: '0',
     operator: null,
     firstNumber: null,
-    WsecondNumber: false,
+    secondNumber: null,
 
 };
 numberButtons.addEventListener('click', (event) => {
@@ -32,21 +32,25 @@ numberButtons.addEventListener('click', (event) => {
 })
 
 function forSecondNumber(operatorDigit) {
-    let inputValue = displayCalculator.displayValue;
 
-    if (displayCalculator.firstNumber == null && !isNaN(inputValue)) {
-        displayCalculator.firstNumber = inputValue;
-    } else
+    console.log(displayCalculator.firstNumber)
+    if (!displayCalculator.firstNumber || !displayCalculator.secondNumber && displayCalculator.operator) {
+        alert("you should enter operation and two numbers")
+        return
+    }
+
     if (displayCalculator.operator) {
 
-        const result = basicOperator(displayCalculator.firstNumber, inputValue, displayCalculator.operator)
+        const result = basicOperator(displayCalculator.firstNumber, displayCalculator.secondNumber, displayCalculator.operator)
 
-        displayCalculator.displayValue = String(result.toFixed(4));
+        displayCalculator.displayValue = result;
         displayCalculator.firstNumber = result;
+        displayCalculator.secondNumber = null;
+
         updateScreen();
 
     }
-    displayCalculator.WsecondNumber = true;
+
     displayCalculator.operator = operatorDigit;
 }
 
@@ -54,10 +58,7 @@ function basicOperator(number, value, operator) {
     let firstnumber = parseInt(number);
     let secondnumber = parseInt(value);
 
-    if (operator === '=' && displayCalculator.displayValue === '0.0000' || displayCalculator.displayValue === '0') {
-        alert("you should enter operation and two numbers")
 
-    } else
     if (operator === '-') {
 
         return (firstnumber - secondnumber);
@@ -74,21 +75,37 @@ function basicOperator(number, value, operator) {
         } else
             return firstnumber / secondnumber;
     }
-    return secondnumber;
+    return displayCalculator.displayValue;
 }
 
 
 
 function inputDigit(number) {
-    if (displayCalculator.WsecondNumber === true) {
-        displayCalculator.displayValue = number;
-        displayCalculator.WsecondNumber = false;
-    } else {
-        if (displayCalculator.displayValue === '0')
 
-            displayCalculator.displayValue = number;
-        else {
-            displayCalculator.displayValue = displayCalculator.displayValue + number;
+    if (number.length === 1) {
+
+        if (displayCalculator.operator && displayCalculator.firstNumber) {
+            if (!displayCalculator.secondNumber) {
+                displayCalculator.displayValue = number;
+                displayCalculator.secondNumber = displayCalculator.displayValue;
+                console.log(displayCalculator)
+
+
+            } else {
+                displayCalculator.displayValue = displayCalculator.displayValue + number;
+                displayCalculator.secondNumber = displayCalculator.displayValue;
+                console.log(displayCalculator)
+            }
+        } else {
+            if (displayCalculator.displayValue === '0') {
+                displayCalculator.displayValue = number;
+                displayCalculator.firstNumber = displayCalculator.displayValue;
+                console.log(displayCalculator)
+            } else {
+                displayCalculator.displayValue = displayCalculator.displayValue + number;
+                displayCalculator.firstNumber = displayCalculator.displayValue;
+                console.log(displayCalculator)
+            }
         }
     }
 }
@@ -97,7 +114,7 @@ function clearScreen() {
     displayCalculator.displayValue = '0';
     displayCalculator.operator = null;
     displayCalculator.firstNumber = null;
-    displayCalculator.WsecondNumber = false;
+    displayCalculator.secondNumber = null;
 
 }
 
