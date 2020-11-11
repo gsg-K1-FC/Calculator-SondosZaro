@@ -37,6 +37,7 @@ function forSecondNumber(operatorDigit) {
     if (!displayCalculator.firstNumber || !displayCalculator.secondNumber &&
         displayCalculator.operator && displayCalculator.operator !== "=") {
         alert("you should enter operation and two numbers")
+        clearScreen();
         return
     }
 
@@ -73,10 +74,12 @@ function basicOperator(numberOne, numberTwo, operator) {
     } else if (operator === '/') {
         if (secondnumber == 0) {
             alert("you can't divide by zero")
+            clearScreen();
             return firstnumber;
         } else
             return firstnumber / secondnumber;
     }
+
     return displayCalculator.displayValue;
 }
 
