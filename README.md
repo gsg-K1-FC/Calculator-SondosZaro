@@ -16,3 +16,5 @@ This site is done by [sondos Zaro](https://github.com/sondos-zaro)  with the fol
 
 4-Use java script to do the calculator functions
 
+## github page:
+https://gsg-k1-fc.github.io/Calculator-SondosZaro/
