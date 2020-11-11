@@ -32,8 +32,9 @@
     background-color: #85004D;
     outline: none;
     border-radius: 25px;
-    width: 95%;
-    height: 20%;
+    width: 88%;
+    height: 25px;
+    margin-left: 15px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -45,7 +46,9 @@
 }
 
 .btn,
-.btnC {
+.btnC,
+.btnO,
+.btn-clear {
     color: #FBFF52;
     background-color: #85004D;
     width: 21%;
