@@ -75,7 +75,7 @@ function basicOperator(numberOne, numberTwo, operator) {
         if (secondnumber == 0) {
             alert("you can't divide by zero")
             clearScreen();
-            return firstnumber;
+            return displayCalculator.displayValue;
         } else
             return firstnumber / secondnumber;
     }
